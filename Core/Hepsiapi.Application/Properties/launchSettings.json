@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "Hepsiapi.Application": {
+      "commandName": "Project"
+    }
+  }
+}

@@ -1,3 +1,6 @@
+using HepsiApi.PresisTence; // referans eklemeyý unuttuðum için tanýmlamýyormuþ
+// api kýsmýnda referances kýsmýnda persistence kýsmýný seçtim düzeldi
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -11,10 +14,16 @@ var env = builder.Environment;
 
 var app = builder.Build();
 
+
 builder.Configuration
     .SetBasePath(env.ContentRootPath)
     .AddJsonFile("appsettings.json", optional: false)
     .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
+
+
+// bu kodu yukarýdakinin altýna yazmamýn sebebi öncelikle hangi ortama ait olduðunu bulup ondan sonra configuration yapmasý
+builder.Services.AddPersistence(builder.Configuration);
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

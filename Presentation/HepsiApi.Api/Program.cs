@@ -12,7 +12,7 @@ builder.Services.AddSwaggerGen();
 
 var env = builder.Environment;
 
-var app = builder.Build();
+
 
 
 builder.Configuration
@@ -24,7 +24,7 @@ builder.Configuration
 // bu kodu yukarýdakinin altýna yazmamýn sebebi öncelikle hangi ortama ait olduðunu bulup ondan sonra configuration yapmasý
 builder.Services.AddPersistence(builder.Configuration);
 
-
+var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

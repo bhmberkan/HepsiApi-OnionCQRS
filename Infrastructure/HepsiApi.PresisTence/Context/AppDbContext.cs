@@ -17,7 +17,7 @@ namespace HepsiApi.PresisTence.Context
 
         }
 
-        public AppDbContext(DbContextOptions options) : base(options)
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
 
         }
@@ -38,7 +38,7 @@ namespace HepsiApi.PresisTence.Context
         }
 
 
-      /*  protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+       /* protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
 

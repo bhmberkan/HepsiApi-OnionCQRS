@@ -15,7 +15,7 @@ namespace HepsiApi.PresisTence
         public static void AddPersistence(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<AppDbContext>(opt => 
-            opt.UseSqlServer(configuration.GetConnectionString("DefaultConnetciton")));
+            opt.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
         }
     }

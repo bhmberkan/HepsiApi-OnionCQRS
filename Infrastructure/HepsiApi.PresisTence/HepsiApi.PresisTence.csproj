@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Core\Hepsiapi.Application\Hepsiapi.Application.csproj" />
     <ProjectReference Include="..\..\Core\Hepsiapi.Domain\Hepsiapi.Domain.csproj" />
   </ItemGroup>
 

@@ -1,6 +1,8 @@
 using HepsiApi.PresisTence; // referans eklemeyý unuttuðum için tanýmlamýyormuþ
 // api kýsmýnda referances kýsmýnda persistence kýsmýný seçtim düzeldi
 
+using Hepsiapi.Application;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -23,8 +25,10 @@ builder.Configuration
 
 // bu kodu yukarýdakinin altýna yazmamýn sebebi öncelikle hangi ortama ait olduðunu bulup ondan sonra configuration yapmasý
 builder.Services.AddPersistence(builder.Configuration);
+builder.Services.AddApplication(); // bu derste ekledik applicationumuzu çalýþtýrmak için
+// IServiceCollection gibi çalýþtý proje referansý vermedýk.
 
-var app = builder.Build();
+ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

@@ -1,6 +1,7 @@
 ﻿using Hepsiapi.Application.Interfaces.Repositories;
 using Hepsiapi.Application.UnitOfWorks;
 using HepsiApi.PresisTence.Context;
+using HepsiApi.PresisTence.Repositories;
 using HepsiApi.PresisTence.UnitOfWorks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -20,8 +21,8 @@ namespace HepsiApi.PresisTence
             services.AddDbContext<AppDbContext>(opt => 
             opt.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddScoped(typeof(IReadRepository<>), typeof(IReadRepository<>));
-            services.AddScoped(typeof(IWriteRepository<>), typeof(IWriteRepository<>));
+            services.AddScoped(typeof(IReadRepository<>), typeof(ReadRepository<>));
+            services.AddScoped(typeof(IWriteRepository<>), typeof(WriteRepository<>));
 
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();

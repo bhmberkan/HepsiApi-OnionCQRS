@@ -23,9 +23,8 @@ namespace Hepsiapi.Application.Interfaces.Repositories
            bool enableTracking = false, int currentPage=1, int pageSize=3 /*gördüğümüz sayfadaki ilk 3 veriyi alacak*/);
 
 
-        Task<T> GetAsync(Expression<Func<T, bool>> predicate, Func<IQueryable<T>,
-           IIncludableQueryable<T, object>>? include = null, bool enableTracking = false);
-
+        Task<T> GetAsync(Expression<Func<T, bool>> predicate,
+            Func<IQueryable<T>, IIncludableQueryable<T, object>>? include = null, bool enableTracking = false);
         IQueryable<T> Find(Expression<Func<T,bool>> predicate, bool enableTracking = false);
 
         Task<int> CountAsync(Expression<Func<T, bool>>? predicate = null);

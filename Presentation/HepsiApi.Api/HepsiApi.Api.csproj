@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\HepsiApi.Mapper\HepsiApi.Mapper.csproj" />
     <ProjectReference Include="..\..\Infrastructure\HepsiApi.PresisTence\HepsiApi.PresisTence.csproj" />
   </ItemGroup>
 

@@ -2,6 +2,7 @@ using HepsiApi.PresisTence; // referans eklemeyý unuttuðum için tanýmlamýyormuþ
 // api kýsmýnda referances kýsmýnda persistence kýsmýný seçtim düzeldi
 
 using Hepsiapi.Application;
+using HepsiApi.Mapper;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,6 +28,7 @@ builder.Configuration
 builder.Services.AddPersistence(builder.Configuration);
 builder.Services.AddApplication(); // bu derste ekledik applicationumuzu çalýþtýrmak için
 // IServiceCollection gibi çalýþtý proje referansý vermedýk.
+builder.Services.AddCustomMapper();
 
  var app = builder.Build();
 // Configure the HTTP request pipeline.
@@ -41,3 +43,5 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+//23.20 de kaldým ders 11

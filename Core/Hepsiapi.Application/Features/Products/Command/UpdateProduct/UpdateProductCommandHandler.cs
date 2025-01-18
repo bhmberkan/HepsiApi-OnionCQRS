@@ -39,7 +39,7 @@ namespace Hepsiapi.Application.Features.Products.Command.UpdateProduct
 
 
             }
-            // burda eksiklik var.
+          
 
             await unitOfWork.GetWriteRepository<Product>().UpdateAsync(map);
             await unitOfWork.SaveAsync();

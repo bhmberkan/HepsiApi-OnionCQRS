@@ -49,5 +49,10 @@ namespace HepsiApi.PresisTence.Repositories
         {
             await Task.Run(() => Table.RemoveRange());
         }
+
+        public async Task SoftDeleteAsync(T entity)
+        {
+            await Task.Run(() => Table.Update(entity));
+        }
     }
 }

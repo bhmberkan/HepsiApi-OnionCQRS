@@ -27,6 +27,8 @@ namespace HepsiApi.PresisTence.Context
         public DbSet<Category> categories { get; set; }
         public DbSet<Product> products { get; set; }
 
+        public DbSet<ProductCategory> ProductCategories { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

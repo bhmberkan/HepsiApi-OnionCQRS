@@ -34,7 +34,7 @@ namespace HepsiApi.Api.Controller
         }
 
         [HttpPost]
-        public async Task<IActionResult> UpdateProducts(UpdateProductCommandRequest request)
+        public async Task<IActionResult> UpdateProduct(UpdateProductCommandRequest request)
         {
             await mediator.Send(request);
             return Ok();

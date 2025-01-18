@@ -24,7 +24,8 @@ namespace Hepsiapi.Application.Features.Products.Command.DeleteProduct
 
             product.IsDeleted = true;
 
-            await unitOfWork.GetWriteRepository<Product>().UpdateAsync(product);
+            await unitOfWork.GetWriteRepository<Product>().UpdateAsync(product); 
+           
             await unitOfWork.SaveAsync();
 
         }

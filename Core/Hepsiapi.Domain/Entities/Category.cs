@@ -30,7 +30,7 @@ namespace Hepsiapi.Domain.Entities
         public int Priorty { get; set; }
 
         public ICollection<Detail> Details { get; set; } // bire çok ilişki
-        
-        public ICollection<Product> Products { get; set; }
+
+        public ICollection<ProductCategory> ProductCategories { get; set; }
     }
 }

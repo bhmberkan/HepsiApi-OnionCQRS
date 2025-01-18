@@ -16,14 +16,14 @@ namespace HepsiApi.PresisTence.Configurations
             builder.HasKey(x => new { x.ProductId, x.CategoryId });
 
             builder.HasOne(p=>p.product)
-                .WithMany(pc=>pc.productCategories)
+                .WithMany(pc=>pc.ProductCategories)
                 .HasForeignKey(pc=>pc.ProductId)
                 .OnDelete(DeleteBehavior.Cascade);
             // ondelete kısmında entity silinirse bağlantılı olan entityler de silinecektir.
 
 
             builder.HasOne(c => c.category)
-             .WithMany(pc => pc.productCategories)
+             .WithMany(pc => pc.ProductCategories)
              .HasForeignKey(pc => pc.CategoryId)
              .OnDelete(DeleteBehavior.Cascade);
 

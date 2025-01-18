@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+﻿using Hepsiapi.Application.Interfaces.AutoMapper;
 using Hepsiapi.Application.UnitOfWorks;
 using Hepsiapi.Domain.Entities;
 using MediatR;
@@ -25,7 +25,7 @@ namespace Hepsiapi.Application.Features.Products.Command.UpdateProduct
         {
             var product = await unitOfWork.GetReadRepository<Product>().GetAsync(x => x.Id == request.Id && !x.IsDeleted);
 
-           // var map = mapper.Map<Product , UpdateProductCommandRequest>(request); 
+            var map = mapper.Map<Product , UpdateProductCommandRequest>(request); 
 
             var productCategories = await unitOfWork.GetReadRepository<ProductCategory>().GetAllAsync(x => x.ProductId == product.Id);
 
@@ -40,7 +40,7 @@ namespace Hepsiapi.Application.Features.Products.Command.UpdateProduct
 
             }
 
-            await unitOfWork.GetWriteRepository<Product>().UpdateAsync(product);
+            await unitOfWork.GetWriteRepository<Product>().UpdateAsync(map);
             await unitOfWork.SaveAsync();
 
 

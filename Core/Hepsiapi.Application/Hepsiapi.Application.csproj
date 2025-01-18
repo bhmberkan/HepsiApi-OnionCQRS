@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
     <PackageReference Include="MediatR" Version="12.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.10" />
   </ItemGroup>
@@ -17,6 +18,7 @@
 
   <ItemGroup>
     <Folder Include="Features\Products\Command\" />
+    <Folder Include="Interfaces\AutoMapper\" />
   </ItemGroup>
 
 </Project>

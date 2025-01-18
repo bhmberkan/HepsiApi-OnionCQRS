@@ -18,6 +18,7 @@ namespace Hepsiapi.Application.Interfaces.Repositories
      // Task DeleteAsync(T entity); // int id de verebiliriz. ancak ıd stringse patlar
 
         Task HardDeleteAsync(T entity);
+        Task HardDeleteRangeAsync(IList<T> entity);
 
 
 

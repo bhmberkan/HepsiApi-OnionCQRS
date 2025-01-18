@@ -19,8 +19,9 @@ namespace HepsiApi.Api.Controller
         [HttpGet]
         public async Task<IActionResult> GetAllProducts(GetAllProductsQueryRequest request)
         {
+          //  var response = await mediator.Send(new GetAllProductsQueryRequest());
             var response = await mediator.Send(request);
-            return Ok();
+            return Ok(response);
         }
     }
 }

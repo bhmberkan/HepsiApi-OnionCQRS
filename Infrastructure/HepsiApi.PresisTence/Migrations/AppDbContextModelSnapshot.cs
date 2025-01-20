@@ -22,21 +22,6 @@ namespace HepsiApi.PresisTence.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("CategoryProduct", b =>
-                {
-                    b.Property<int>("CategoriesId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProductsId")
-                        .HasColumnType("int");
-
-                    b.HasKey("CategoriesId", "ProductsId");
-
-                    b.HasIndex("ProductsId");
-
-                    b.ToTable("CategoryProduct");
-                });
-
             modelBuilder.Entity("Hepsiapi.Domain.Entities.Brand", b =>
                 {
                     b.Property<int>("Id")
@@ -64,23 +49,23 @@ namespace HepsiApi.PresisTence.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2025, 1, 10, 23, 37, 9, 444, DateTimeKind.Local).AddTicks(8756),
+                            CreatedDate = new DateTime(2025, 1, 20, 22, 49, 9, 600, DateTimeKind.Local).AddTicks(7209),
                             IsDeleted = false,
-                            Name = "Beauty, Jewelery & Clothing"
+                            Name = "Movies, Movies & Automotive"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2025, 1, 10, 23, 37, 9, 444, DateTimeKind.Local).AddTicks(8774),
+                            CreatedDate = new DateTime(2025, 1, 20, 22, 49, 9, 600, DateTimeKind.Local).AddTicks(7226),
                             IsDeleted = false,
-                            Name = "Computers, Garden & Garden"
+                            Name = "Computers, Clothing & Toys"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2025, 1, 10, 23, 37, 9, 444, DateTimeKind.Local).AddTicks(8779),
+                            CreatedDate = new DateTime(2025, 1, 20, 22, 49, 9, 600, DateTimeKind.Local).AddTicks(7241),
                             IsDeleted = true,
-                            Name = "Clothing"
+                            Name = "Beauty, Kids & Industrial"
                         });
                 });
 
@@ -116,7 +101,7 @@ namespace HepsiApi.PresisTence.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2025, 1, 10, 23, 37, 9, 445, DateTimeKind.Local).AddTicks(219),
+                            CreatedDate = new DateTime(2025, 1, 20, 22, 49, 9, 600, DateTimeKind.Local).AddTicks(8902),
                             IsDeleted = false,
                             Name = "Elektrik",
                             ParentId = 0,
@@ -125,7 +110,7 @@ namespace HepsiApi.PresisTence.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2025, 1, 10, 23, 37, 9, 445, DateTimeKind.Local).AddTicks(221),
+                            CreatedDate = new DateTime(2025, 1, 20, 22, 49, 9, 600, DateTimeKind.Local).AddTicks(8904),
                             IsDeleted = false,
                             Name = "Moda",
                             ParentId = 0,
@@ -134,7 +119,7 @@ namespace HepsiApi.PresisTence.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2025, 1, 10, 23, 37, 9, 445, DateTimeKind.Local).AddTicks(223),
+                            CreatedDate = new DateTime(2025, 1, 20, 22, 49, 9, 600, DateTimeKind.Local).AddTicks(8905),
                             IsDeleted = false,
                             Name = "Bilgisayar",
                             ParentId = 1,
@@ -143,7 +128,7 @@ namespace HepsiApi.PresisTence.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2025, 1, 10, 23, 37, 9, 445, DateTimeKind.Local).AddTicks(224),
+                            CreatedDate = new DateTime(2025, 1, 20, 22, 49, 9, 600, DateTimeKind.Local).AddTicks(8907),
                             IsDeleted = false,
                             Name = "Kadın",
                             ParentId = 2,
@@ -187,28 +172,28 @@ namespace HepsiApi.PresisTence.Migrations
                         {
                             Id = 1,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2025, 1, 10, 23, 37, 9, 446, DateTimeKind.Local).AddTicks(3974),
-                            Description = "Salladı odio quia qui autem.",
+                            CreatedDate = new DateTime(2025, 1, 20, 22, 49, 9, 602, DateTimeKind.Local).AddTicks(3450),
+                            Description = "Duyulmamış masanın odio otobüs aut.",
                             IsDeleted = false,
-                            Title = "Et."
+                            Title = "Sinema."
                         },
                         new
                         {
                             Id = 2,
                             CategoryId = 3,
-                            CreatedDate = new DateTime(2025, 1, 10, 23, 37, 9, 446, DateTimeKind.Local).AddTicks(4003),
-                            Description = "Bundan vel qui dolayı öyle.",
+                            CreatedDate = new DateTime(2025, 1, 20, 22, 49, 9, 602, DateTimeKind.Local).AddTicks(3487),
+                            Description = "Olduğu fugit lakin magnam veritatis.",
                             IsDeleted = true,
-                            Title = "Gitti."
+                            Title = "Adipisci."
                         },
                         new
                         {
                             Id = 3,
                             CategoryId = 4,
-                            CreatedDate = new DateTime(2025, 1, 10, 23, 37, 9, 446, DateTimeKind.Local).AddTicks(4036),
-                            Description = "Commodi magnam dolorem voluptatem de.",
+                            CreatedDate = new DateTime(2025, 1, 20, 22, 49, 9, 602, DateTimeKind.Local).AddTicks(3515),
+                            Description = "Yazın doğru adanaya voluptatem makinesi.",
                             IsDeleted = false,
-                            Title = "Suscipit."
+                            Title = "Mi."
                         });
                 });
 
@@ -254,39 +239,39 @@ namespace HepsiApi.PresisTence.Migrations
                         {
                             Id = 1,
                             BrandId = 1,
-                            CreatedDate = new DateTime(2025, 1, 10, 23, 37, 9, 447, DateTimeKind.Local).AddTicks(6691),
-                            Description = "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
-                            Discount = 5.397703122667650m,
+                            CreatedDate = new DateTime(2025, 1, 20, 22, 49, 9, 604, DateTimeKind.Local).AddTicks(4954),
+                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+                            Discount = 1.803160940843090m,
                             IsDeleted = false,
-                            Price = 920.83m,
-                            Title = "Handcrafted Granite Fish"
+                            Price = 692.75m,
+                            Title = "Handmade Cotton Keyboard"
                         },
                         new
                         {
                             Id = 2,
                             BrandId = 3,
-                            CreatedDate = new DateTime(2025, 1, 10, 23, 37, 9, 447, DateTimeKind.Local).AddTicks(6716),
-                            Description = "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
-                            Discount = 8.422036111385270m,
+                            CreatedDate = new DateTime(2025, 1, 20, 22, 49, 9, 604, DateTimeKind.Local).AddTicks(4985),
+                            Description = "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
+                            Discount = 4.742554099245720m,
                             IsDeleted = false,
-                            Price = 48.41m,
-                            Title = "Handcrafted Frozen Chips"
+                            Price = 899.69m,
+                            Title = "Fantastic Wooden Salad"
                         });
                 });
 
-            modelBuilder.Entity("CategoryProduct", b =>
+            modelBuilder.Entity("Hepsiapi.Domain.Entities.ProductCategory", b =>
                 {
-                    b.HasOne("Hepsiapi.Domain.Entities.Category", null)
-                        .WithMany()
-                        .HasForeignKey("CategoriesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
 
-                    b.HasOne("Hepsiapi.Domain.Entities.Product", null)
-                        .WithMany()
-                        .HasForeignKey("ProductsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.HasKey("ProductId", "CategoryId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("ProductCategories");
                 });
 
             modelBuilder.Entity("Hepsiapi.Domain.Entities.Detail", b =>
@@ -311,9 +296,35 @@ namespace HepsiApi.PresisTence.Migrations
                     b.Navigation("Brand");
                 });
 
+            modelBuilder.Entity("Hepsiapi.Domain.Entities.ProductCategory", b =>
+                {
+                    b.HasOne("Hepsiapi.Domain.Entities.Category", "category")
+                        .WithMany("ProductCategories")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Hepsiapi.Domain.Entities.Product", "product")
+                        .WithMany("ProductCategories")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("category");
+
+                    b.Navigation("product");
+                });
+
             modelBuilder.Entity("Hepsiapi.Domain.Entities.Category", b =>
                 {
                     b.Navigation("Details");
+
+                    b.Navigation("ProductCategories");
+                });
+
+            modelBuilder.Entity("Hepsiapi.Domain.Entities.Product", b =>
+                {
+                    b.Navigation("ProductCategories");
                 });
 #pragma warning restore 612, 618
         }

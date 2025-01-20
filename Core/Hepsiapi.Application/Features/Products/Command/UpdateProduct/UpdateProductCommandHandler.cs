@@ -34,10 +34,14 @@ namespace Hepsiapi.Application.Features.Products.Command.UpdateProduct
             foreach (var categoryId in request.CategoryIds)
             {
 
-                await unitOfWork.GetWriteRepository<ProductCategory>()
-                    .AddAsync(new() { CategoryId = categoryId, ProductId = product.Id });
-
-
+                var existingCategory = await unitOfWork.GetReadRepository<ProductCategory>()
+                       .GetAsync(x => x.ProductId == product.Id && x.CategoryId == categoryId);
+                // kontrol sağlıyoruz
+                if (existingCategory == null)
+                {
+                    await unitOfWork.GetWriteRepository<ProductCategory>()
+                        .AddAsync(new ProductCategory { CategoryId = categoryId, ProductId = product.Id });
+                }
             }
           
 

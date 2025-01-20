@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HepsiApi.PresisTence.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250117205556_Update1")]
-    partial class Update1
+    [Migration("20250120194910_update1")]
+    partial class update1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -52,23 +52,23 @@ namespace HepsiApi.PresisTence.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2025, 1, 17, 23, 55, 55, 936, DateTimeKind.Local).AddTicks(5315),
+                            CreatedDate = new DateTime(2025, 1, 20, 22, 49, 9, 600, DateTimeKind.Local).AddTicks(7209),
                             IsDeleted = false,
-                            Name = "Computers, Industrial & Garden"
+                            Name = "Movies, Movies & Automotive"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2025, 1, 17, 23, 55, 55, 936, DateTimeKind.Local).AddTicks(5321),
+                            CreatedDate = new DateTime(2025, 1, 20, 22, 49, 9, 600, DateTimeKind.Local).AddTicks(7226),
                             IsDeleted = false,
-                            Name = "Books"
+                            Name = "Computers, Clothing & Toys"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2025, 1, 17, 23, 55, 55, 936, DateTimeKind.Local).AddTicks(5327),
+                            CreatedDate = new DateTime(2025, 1, 20, 22, 49, 9, 600, DateTimeKind.Local).AddTicks(7241),
                             IsDeleted = true,
-                            Name = "Games"
+                            Name = "Beauty, Kids & Industrial"
                         });
                 });
 
@@ -104,7 +104,7 @@ namespace HepsiApi.PresisTence.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2025, 1, 17, 23, 55, 55, 936, DateTimeKind.Local).AddTicks(7073),
+                            CreatedDate = new DateTime(2025, 1, 20, 22, 49, 9, 600, DateTimeKind.Local).AddTicks(8902),
                             IsDeleted = false,
                             Name = "Elektrik",
                             ParentId = 0,
@@ -113,7 +113,7 @@ namespace HepsiApi.PresisTence.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2025, 1, 17, 23, 55, 55, 936, DateTimeKind.Local).AddTicks(7075),
+                            CreatedDate = new DateTime(2025, 1, 20, 22, 49, 9, 600, DateTimeKind.Local).AddTicks(8904),
                             IsDeleted = false,
                             Name = "Moda",
                             ParentId = 0,
@@ -122,7 +122,7 @@ namespace HepsiApi.PresisTence.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2025, 1, 17, 23, 55, 55, 936, DateTimeKind.Local).AddTicks(7076),
+                            CreatedDate = new DateTime(2025, 1, 20, 22, 49, 9, 600, DateTimeKind.Local).AddTicks(8905),
                             IsDeleted = false,
                             Name = "Bilgisayar",
                             ParentId = 1,
@@ -131,7 +131,7 @@ namespace HepsiApi.PresisTence.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2025, 1, 17, 23, 55, 55, 936, DateTimeKind.Local).AddTicks(7078),
+                            CreatedDate = new DateTime(2025, 1, 20, 22, 49, 9, 600, DateTimeKind.Local).AddTicks(8907),
                             IsDeleted = false,
                             Name = "Kadın",
                             ParentId = 2,
@@ -175,28 +175,28 @@ namespace HepsiApi.PresisTence.Migrations
                         {
                             Id = 1,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2025, 1, 17, 23, 55, 55, 938, DateTimeKind.Local).AddTicks(5601),
-                            Description = "Aliquam batarya çünkü praesentium numquam.",
+                            CreatedDate = new DateTime(2025, 1, 20, 22, 49, 9, 602, DateTimeKind.Local).AddTicks(3450),
+                            Description = "Duyulmamış masanın odio otobüs aut.",
                             IsDeleted = false,
-                            Title = "Filmini."
+                            Title = "Sinema."
                         },
                         new
                         {
                             Id = 2,
                             CategoryId = 3,
-                            CreatedDate = new DateTime(2025, 1, 17, 23, 55, 55, 938, DateTimeKind.Local).AddTicks(5681),
-                            Description = "Çarpan voluptas quaerat gitti ipsam.",
+                            CreatedDate = new DateTime(2025, 1, 20, 22, 49, 9, 602, DateTimeKind.Local).AddTicks(3487),
+                            Description = "Olduğu fugit lakin magnam veritatis.",
                             IsDeleted = true,
-                            Title = "İpsam."
+                            Title = "Adipisci."
                         },
                         new
                         {
                             Id = 3,
                             CategoryId = 4,
-                            CreatedDate = new DateTime(2025, 1, 17, 23, 55, 55, 938, DateTimeKind.Local).AddTicks(5720),
-                            Description = "Sıradanlıktan laboriosam sed mi un.",
+                            CreatedDate = new DateTime(2025, 1, 20, 22, 49, 9, 602, DateTimeKind.Local).AddTicks(3515),
+                            Description = "Yazın doğru adanaya voluptatem makinesi.",
                             IsDeleted = false,
-                            Title = "Mıknatıslı."
+                            Title = "Mi."
                         });
                 });
 
@@ -242,23 +242,23 @@ namespace HepsiApi.PresisTence.Migrations
                         {
                             Id = 1,
                             BrandId = 1,
-                            CreatedDate = new DateTime(2025, 1, 17, 23, 55, 55, 940, DateTimeKind.Local).AddTicks(4514),
-                            Description = "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
-                            Discount = 5.425364807886990m,
+                            CreatedDate = new DateTime(2025, 1, 20, 22, 49, 9, 604, DateTimeKind.Local).AddTicks(4954),
+                            Description = "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+                            Discount = 1.803160940843090m,
                             IsDeleted = false,
-                            Price = 736.86m,
-                            Title = "Gorgeous Cotton Keyboard"
+                            Price = 692.75m,
+                            Title = "Handmade Cotton Keyboard"
                         },
                         new
                         {
                             Id = 2,
                             BrandId = 3,
-                            CreatedDate = new DateTime(2025, 1, 17, 23, 55, 55, 940, DateTimeKind.Local).AddTicks(4543),
-                            Description = "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
-                            Discount = 1.994088995443290m,
+                            CreatedDate = new DateTime(2025, 1, 20, 22, 49, 9, 604, DateTimeKind.Local).AddTicks(4985),
+                            Description = "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
+                            Discount = 4.742554099245720m,
                             IsDeleted = false,
-                            Price = 155.53m,
-                            Title = "Intelligent Concrete Towels"
+                            Price = 899.69m,
+                            Title = "Fantastic Wooden Salad"
                         });
                 });
 
@@ -274,7 +274,7 @@ namespace HepsiApi.PresisTence.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("productCategories");
+                    b.ToTable("ProductCategories");
                 });
 
             modelBuilder.Entity("Hepsiapi.Domain.Entities.Detail", b =>
@@ -302,13 +302,13 @@ namespace HepsiApi.PresisTence.Migrations
             modelBuilder.Entity("Hepsiapi.Domain.Entities.ProductCategory", b =>
                 {
                     b.HasOne("Hepsiapi.Domain.Entities.Category", "category")
-                        .WithMany("productCategories")
+                        .WithMany("ProductCategories")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Hepsiapi.Domain.Entities.Product", "product")
-                        .WithMany("productCategories")
+                        .WithMany("ProductCategories")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -322,12 +322,12 @@ namespace HepsiApi.PresisTence.Migrations
                 {
                     b.Navigation("Details");
 
-                    b.Navigation("productCategories");
+                    b.Navigation("ProductCategories");
                 });
 
             modelBuilder.Entity("Hepsiapi.Domain.Entities.Product", b =>
                 {
-                    b.Navigation("productCategories");
+                    b.Navigation("ProductCategories");
                 });
 #pragma warning restore 612, 618
         }

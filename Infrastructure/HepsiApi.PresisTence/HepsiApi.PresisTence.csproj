@@ -21,4 +21,8 @@
     <ProjectReference Include="..\..\Core\Hepsiapi.Domain\Hepsiapi.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
 </Project>

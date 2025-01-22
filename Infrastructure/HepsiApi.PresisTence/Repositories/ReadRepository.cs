@@ -22,14 +22,21 @@ namespace HepsiApi.PresisTence.Repositories
 
         private DbSet<T> Table { get => dbContext.Set<T>(); }
 
-        public async Task<IList<T>> GetAllAsync(Expression<Func<T, bool>>? predicate = null, Func<IQueryable<T>, IIncludableQueryable<T, object>>? include = null, Func<IQueryable<T>, IOrderedQueryable<T>>? Orderby = null, bool enableTracking = false)
+        public async Task<IList<T>> GetAllAsync(Expression<Func<T, bool>>? predicate = null,
+    Func<IQueryable<T>, IIncludableQueryable<T, object>>? include = null,
+    Func<IQueryable<T>, IOrderedQueryable<T>>? Orderby = null,
+    bool enableTracking = false)
         {
-            IQueryable<T> queryable = Table;
-            if (!enableTracking) queryable = queryable.AsNoTracking(); // sadece okuma yapacağımız için tracik mekanızmasını devre dışı bırakıyoruz.
-            if (include is not null) queryable = include(queryable);
-            if (predicate is not null) queryable = queryable.Where(predicate); // queryable'lere opsiyonlar yazdık farkı by orderby ile
-            if (Orderby is not null)
-                return await Orderby(queryable).ToListAsync(); // listeleme işlemi yaptığımız için return ediyoruz // liste döndürdük
+            IQueryable<T> queryable = enableTracking ? Table : Table.AsNoTracking();
+
+            if (include != null)
+                queryable = include(queryable);
+
+            if (predicate != null)
+                queryable = queryable.Where(predicate);
+
+            if (Orderby != null)
+                return await Orderby(queryable).ToListAsync();
 
             return await queryable.ToListAsync();
         }
@@ -70,11 +77,11 @@ namespace HepsiApi.PresisTence.Repositories
             return await Table.CountAsync();
         }
 
-        public   IQueryable<T> Find(Expression<Func<T, bool>> predicate, bool enableTracking = false)
+        public IQueryable<T> Find(Expression<Func<T, bool>> predicate, bool enableTracking = false)
         {
             if (!enableTracking) Table.AsNoTracking();
 
-            return  Table.Where(predicate);
+            return Table.Where(predicate);
         }
 
 

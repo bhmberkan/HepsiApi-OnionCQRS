@@ -25,28 +25,28 @@ namespace Hepsiapi.Application.Features.Products.Command.UpdateProduct
         {
             var product = await unitOfWork.GetReadRepository<Product>().GetAsync(x => x.Id == request.Id && !x.IsDeleted);
 
-            var map = mapper.Map<Product , UpdateProductCommandRequest>(request); 
+            if (product == null)
+            {
+                throw new KeyNotFoundException($"{request.Id} bulunamadı");
+            }
 
-            var productCategories = await unitOfWork.GetReadRepository<ProductCategory>().GetAllAsync(x => x.ProductId == product.Id);
 
-            await unitOfWork.GetWriteRepository<ProductCategory>().HardDeleteRangeAsync(productCategories);
+            var map = mapper.Map<Product, UpdateProductCommandRequest>(request);
+
+            var productCategories = await unitOfWork.GetReadRepository<ProductCategory>()
+                .GetAllAsync(x => x.ProductId == product.Id);
+
+            await unitOfWork.GetWriteRepository<ProductCategory>()
+                .HardDeleteRangeAsync(productCategories);
 
             foreach (var categoryId in request.CategoryIds)
-            {
-
-                var existingCategory = await unitOfWork.GetReadRepository<ProductCategory>()
-                       .GetAsync(x => x.ProductId == product.Id && x.CategoryId == categoryId);
-                // kontrol sağlıyoruz
-                if (existingCategory == null)
-                {
-                    await unitOfWork.GetWriteRepository<ProductCategory>()
-                        .AddAsync(new ProductCategory { CategoryId = categoryId, ProductId = product.Id });
-                }
-            }
-          
+                await unitOfWork.GetWriteRepository<ProductCategory>()
+                    .AddAsync(new() { CategoryId = categoryId, ProductId = product.Id });
 
             await unitOfWork.GetWriteRepository<Product>().UpdateAsync(map);
             await unitOfWork.SaveAsync();
+
+
 
 
         }

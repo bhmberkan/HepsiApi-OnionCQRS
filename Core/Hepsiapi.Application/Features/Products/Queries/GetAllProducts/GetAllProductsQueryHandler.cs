@@ -50,7 +50,7 @@ namespace Hepsiapi.Application.Features.Products.Queries.GetAllProducts
             }
 
             return map;
-           // return response;
+          //  throw new Exception("hata mesajı"); // ExceptionModeli denemek için yazdım
         }
     }
 }

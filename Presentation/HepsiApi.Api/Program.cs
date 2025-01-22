@@ -3,6 +3,7 @@ using HepsiApi.PresisTence; // referans eklemeyý unuttuðum için tanýmlamýyormuþ
 
 using Hepsiapi.Application;
 using HepsiApi.Mapper;
+using Hepsiapi.Application.Exeptions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -37,6 +38,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.ConfigureExceptionHandLingMiddleware(); // 
 
 app.UseAuthorization();
 

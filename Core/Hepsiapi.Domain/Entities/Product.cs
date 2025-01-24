@@ -31,5 +31,6 @@ namespace Hepsiapi.Domain.Entities
         public ICollection<ProductCategory> ProductCategories { get; set; }
 
         //   public required string ImagePath{ get; set; }
+        
     }
 }

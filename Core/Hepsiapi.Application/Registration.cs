@@ -1,6 +1,8 @@
 ﻿using FluentValidation;
+using Hepsiapi.Application.Bases;
 using Hepsiapi.Application.Beheviors;
 using Hepsiapi.Application.Exeptions;
+using Hepsiapi.Application.Features.Products.Rules;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -21,12 +23,29 @@ namespace Hepsiapi.Application
 
 
             services.AddTransient<ExceptionMiddleware>();
+            //   services.AddTransient<ProductRules>(); // tek tek tüm kurallar için yazmak yeine
+            // aşşağıdaki private yapıyı oluşturduk
+
+            services.AddRulesFromAssemblyContaining(assembly, typeof(BaseRules));
+
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(assembly));
 
             services.AddValidatorsFromAssembly(assembly);
             ValidatorOptions.Global.LanguageManager.Culture = new CultureInfo("tr");
 
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(FluentValidationBehevior<,>));
+        }
+
+        private static IServiceCollection AddRulesFromAssemblyContaining(
+            this IServiceCollection services, 
+            Assembly assembly, 
+            Type type)
+        {
+            var types = assembly.GetTypes().Where(t => t.IsSubclassOf(type) && type !=t ).ToList();
+            foreach (var item in types)
+                services.AddTransient(item);
+
+            return services;
         }
     }
 }

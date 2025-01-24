@@ -28,6 +28,8 @@ namespace HepsiApi.PresisTence
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
         }
+
+
     }
 
 }

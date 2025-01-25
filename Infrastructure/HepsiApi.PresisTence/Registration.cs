@@ -1,5 +1,6 @@
 ﻿using Hepsiapi.Application.Interfaces.Repositories;
 using Hepsiapi.Application.UnitOfWorks;
+using Hepsiapi.Domain.Entities;
 using HepsiApi.PresisTence.Context;
 using HepsiApi.PresisTence.Repositories;
 using HepsiApi.PresisTence.UnitOfWorks;
@@ -26,6 +27,19 @@ namespace HepsiApi.PresisTence
 
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            services.AddIdentityCore<User>(opt =>
+            {
+                opt.Password.RequireNonAlphanumeric = false; // genel şifre kontrolleri
+                opt.Password.RequiredLength = 2;
+                opt.Password.RequireUppercase = false;
+                opt.Password.RequireLowercase= false;
+                opt.Password.RequireDigit = false;
+                opt.SignIn.RequireConfirmedEmail = false; // mail kontrolu
+
+            })
+                .AddRoles<Role>()
+                .AddEntityFrameworkStores<AppDbContext>();
 
         }
 

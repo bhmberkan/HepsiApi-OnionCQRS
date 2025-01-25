@@ -1,4 +1,5 @@
 ﻿using Hepsiapi.Domain.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using System;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace HepsiApi.PresisTence.Context
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext :  /* DbContext */ IdentityDbContext<User, Role, Guid>
     {
         public AppDbContext()
         {

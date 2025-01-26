@@ -2,6 +2,7 @@ using HepsiApi.PresisTence; // referans eklemeyý unuttuðum için tanýmlamýyormuþ
 // api kýsmýnda referances kýsmýnda persistence kýsmýný seçtim düzeldi
 
 using Hepsiapi.Application;
+using HepsiApi.Infrastructure;
 using HepsiApi.Mapper;
 using Hepsiapi.Application.Exeptions;
 
@@ -27,6 +28,9 @@ builder.Configuration
 
 // bu kodu yukarýdakinin altýna yazmamýn sebebi öncelikle hangi ortama ait olduðunu bulup ondan sonra configuration yapmasý
 builder.Services.AddPersistence(builder.Configuration);
+
+builder.Services.AddInfrastructure(builder.Configuration); 
+
 builder.Services.AddApplication(); // bu derste ekledik applicationumuzu çalýþtýrmak için
 // IServiceCollection gibi çalýþtý proje referansý vermedýk.
 builder.Services.AddCustomMapper();

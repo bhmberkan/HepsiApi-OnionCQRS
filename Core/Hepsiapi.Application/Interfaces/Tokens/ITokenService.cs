@@ -15,7 +15,7 @@ namespace Hepsiapi.Application.Interfaces.Tokens
 
         string GenerateRefleshToken();
 
-        ClaimsPrincipal? GetPrincipalFromEcpiredToken(); // bu yapıya bak
+        ClaimsPrincipal? GetPrincipalFromEcpiredToken(string? token); // bu yapıya bak
 
 
     }

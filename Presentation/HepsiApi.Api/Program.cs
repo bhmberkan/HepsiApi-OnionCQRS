@@ -16,6 +16,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
 
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddSingleton<IHttpContextAccessor , HttpContextAccessor>();
+
 var env = builder.Environment;
 
 
@@ -42,7 +45,7 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Hepsi Api", Version = "v1", Description = "Hepsi Api Swagger Client" });
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
-    {
+    {  
         Name="Authorization",
         Type=SecuritySchemeType.ApiKey,
         Scheme="Bearer",

@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace Hepsiapi.Application.Features.Products.Command.UpdateProduct
 {
     public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommandRequest, Unit>
-    {
+    {//base handler eklerken hata çıkıyor. ???
         private readonly IUnitOfWork unitOfWork;
         private readonly IMapper mapper;
 

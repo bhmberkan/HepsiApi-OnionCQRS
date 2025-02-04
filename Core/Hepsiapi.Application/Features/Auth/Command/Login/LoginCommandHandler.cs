@@ -36,6 +36,7 @@ namespace Hepsiapi.Application.Features.Auth.Command.Login
         public async Task<LoginCommandResponse> Handle(LoginCommandRequest request, CancellationToken cancellationToken)
         {
            User user = await userManager.FindByEmailAsync(request.Email);
+
             bool checkPassword = await userManager.CheckPasswordAsync(user, request.Password);
 
             await authRules.EmailOrPasswordShouldNotBeInvalid(user, checkPassword);

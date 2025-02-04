@@ -12,4 +12,6 @@ namespace Hepsiapi.Application.Features.Products.Exceptions
         public ProductTitleMustNotBeSameException() : base("Ürün Başlığı Zaten var!") { }
        
     }
+
+
 }

@@ -1,7 +1,8 @@
-﻿using AutoMapper;
+﻿
+using AutoMapper;
 using Hepsiapi.Application.Bases;
 using Hepsiapi.Application.Features.Auth.Rules;
-//using Hepsiapi.Application.Interfaces.AutoMapper;
+using Hepsiapi.Application.Interfaces.AutoMapper;
 using Hepsiapi.Application.UnitOfWorks;
 using Hepsiapi.Domain.Entities;
 using MediatR;
@@ -21,9 +22,11 @@ namespace Hepsiapi.Application.Features.Auth.Command.Register
         private readonly AuthRules authRules;
         private readonly UserManager<User> userManager;
         private readonly RoleManager<Role> roleManager;
+        private readonly AutoMapper.IMapper mapper;
 
-        public RegisterCommandHandler(AuthRules authRules,UserManager<User> userManager,RoleManager<Role> roleManager, IMapper mapper,IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper,unitOfWork,httpContextAccessor) 
+        public RegisterCommandHandler(AuthRules authRules,UserManager<User> userManager,RoleManager<Role> roleManager, AutoMapper.IMapper mapper,IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper,unitOfWork,httpContextAccessor) 
         {
+            this.mapper= mapper;
             this.authRules = authRules;
             this.userManager = userManager;
             this.roleManager = roleManager;
@@ -32,7 +35,8 @@ namespace Hepsiapi.Application.Features.Auth.Command.Register
         {
             await authRules.UserShouldNotBeExist(await userManager.FindByEmailAsync(request.Email));
 
-            User user = mapper.Map<User, RegisterCommandRequest>(request); // hata
+           User user = mapper.Map<User>(request);
+           // User user = mapper.Map<User, RegisterCommandRequest>(request); // hata
             user.UserName = request.Email;
             user.SecurityStamp=Guid.NewGuid().ToString();
 

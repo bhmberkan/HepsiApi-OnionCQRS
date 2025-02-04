@@ -73,11 +73,11 @@ builder.Services.AddSwaggerGen(c =>
 
 
 
+builder.Services.AddAutoMapper(typeof(Program));
 
 
 
-
- var app = builder.Build();
+var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

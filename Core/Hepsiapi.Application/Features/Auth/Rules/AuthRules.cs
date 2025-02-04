@@ -1,5 +1,6 @@
 ﻿using Hepsiapi.Application.Bases;
 using Hepsiapi.Application.Features.Auth.Exceptions;
+using Hepsiapi.Application.Features.Products.Exceptions;
 using Hepsiapi.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,12 @@ namespace Hepsiapi.Application.Features.Auth.Rules
         {
             if (user is not null) throw new UserAlreadyExistException();
             return Task.CompletedTask; 
+        }
+
+        public Task EmailOrPasswordShouldNotBeInvalid(User? user, bool checkPassword)
+        {
+            if (user is null || !checkPassword) throw new EmailOrPasswordShouldNotBeInvalid();
+            return Task.CompletedTask;
         }
     }
 }

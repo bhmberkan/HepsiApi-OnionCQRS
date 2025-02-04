@@ -1,4 +1,5 @@
 ﻿using Hepsiapi.Application.Bases;
+using Hepsiapi.Application.Features.Products.Exceptions;
 using Hepsiapi.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -16,5 +17,7 @@ namespace Hepsiapi.Application.Features.Products.Rules
             if(products.Any(x=>x.Title==requestTitle)) throw new NotImplementedException();
             return Task.CompletedTask;
         }
+
+        
     }
 }

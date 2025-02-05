@@ -8,5 +8,5 @@ namespace Hepsiapi.Application.Features.Auth.Exceptions
 
     }
 
-     
-    }
+ 
+}

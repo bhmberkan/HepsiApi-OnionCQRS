@@ -1,4 +1,6 @@
-﻿using Hepsiapi.Application.Interfaces.Tokens;
+﻿using Hepsiapi.Application.Interfaces.RedisCache;
+using Hepsiapi.Application.Interfaces.Tokens;
+using HepsiApi.Infrastructure.RedisCache;
 using HepsiApi.Infrastructure.Tokens;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
@@ -18,6 +20,9 @@ namespace HepsiApi.Infrastructure
         {
             services.Configure<TokenSettings>(configuration.GetSection("JWT"));
             services.AddTransient<ITokenService, TokenService>();
+
+            services.Configure<RedisCacheService>(configuration.GetSection("RedisCacheSettings"));
+            services.AddTransient<IRedisCacheService, RedisCacheService>();
 
             services.AddAuthentication(opt => // kimlik doğrulama
             {
@@ -39,6 +44,13 @@ namespace HepsiApi.Infrastructure
                     ValidAudience = configuration["JWT:Audience"],
                     ClockSkew = TimeSpan.Zero,
                 };
+            });
+
+            services.AddStackExchangeRedisCache(opt =>
+            {
+
+                opt.Configuration = configuration["RedisCacheSettings:ConnectionString"];
+                opt.InstanceName = configuration["RedisCacheSettings:InstanceName"];
             });
         }
 

@@ -1,4 +1,5 @@
-﻿using Hepsiapi.Application.Features.Products.Command.CrateProduct;
+﻿using Hepsiapi.Application.Features.Brand.Commands.CreateBrand;
+using Hepsiapi.Application.Features.Products.Command.CrateProduct;
 using Hepsiapi.Application.Features.Products.Command.DeleteProduct;
 using Hepsiapi.Application.Features.Products.Command.UpdateProduct;
 using Hepsiapi.Application.Features.Products.Queries.GetAllProducts;
@@ -44,6 +45,20 @@ namespace HepsiApi.Api.Controller
         public async Task<IActionResult> DeleteProducts(DeleteProductCommandRequest request)
         {
             await mediator.Send(request);
+            return Ok();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateBrand(CreateBrandCommandRequest request)
+        {
+            await mediator.Send(request);
+            return Ok();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> GetAllBrands()
+        {
+            var response = await mediator.Send(new GetAllProductsQueryRequest());
             return Ok();
         }
     }

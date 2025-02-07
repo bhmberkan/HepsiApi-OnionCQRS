@@ -21,7 +21,14 @@ namespace Hepsiapi.Application.Bases
             this.mapper = mapper;
             this.unitOfWork = unitOfWork;
             this.httpContextAccessor = httpContextAccessor;
-            userId = httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (httpContextAccessor.HttpContext != null)
+            {
+                userId = httpContextAccessor.HttpContext.User?.FindFirstValue(ClaimTypes.NameIdentifier);
+            }
+            else
+            {
+                userId = null;  // HttpContext boşsa null ata
+            }
         }
     }
 }

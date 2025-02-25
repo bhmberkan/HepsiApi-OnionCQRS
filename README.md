@@ -82,12 +82,19 @@ Bu proje MIT lisansı ile lisanslanmıştır. Daha fazla bilgi için [LICENSE](L
 
 ## 📷  Fotograflar
 ![image](https://github.com/user-attachments/assets/9deb63a1-ac51-4746-9c4e-f8ebc346d5f7)
+<br>
 ![image](https://github.com/user-attachments/assets/75df4e03-0fca-40bc-ae0b-c9f637049f68)
+<br>
 ![image](https://github.com/user-attachments/assets/007397be-5169-496b-825a-c4e629d26d2b)
+<br>
 ![image](https://github.com/user-attachments/assets/c9d316d9-93c6-46b3-b401-072e99078ac7)
+<br>
 ![image](https://github.com/user-attachments/assets/f02aad10-64ac-426b-bad5-fb5152367c37)
+<br>
 ![image](https://github.com/user-attachments/assets/575a20df-9312-4d55-bd18-557f11bad3e8)
+<br>
 ![image](https://github.com/user-attachments/assets/9135936e-8f80-4ce9-9688-03945d7150eb)
+<br>
 
 
 ---

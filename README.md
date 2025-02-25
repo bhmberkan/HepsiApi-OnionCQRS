@@ -96,6 +96,8 @@ Bu proje MIT lisansı ile lisanslanmıştır. Daha fazla bilgi için [LICENSE](L
 ![image](https://github.com/user-attachments/assets/9135936e-8f80-4ce9-9688-03945d7150eb)
 <br>
 
+![image](https://github.com/user-attachments/assets/2e233285-3e6a-4f36-be79-55dacc50ea1d)
+<br>
 
 ---
 
